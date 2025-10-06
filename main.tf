@@ -1,21 +1,12 @@
-terraform {
-  required_version = ">= 1.5.0"
-  backend "s3" {}
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
+#############################
+# Identity & environment probes
+#############################
 
-provider "aws" {
-  region  = "us-east-1"
-  profile = "terraform-admin"
-}
-
+# Who am I authenticated as?
 data "aws_caller_identity" "current" {}
 
-output "account_id" {
-  value = data.aws_caller_identity.current.account_id
-}
+# Which region is this provider using?
+data "aws_region" "current" {}
+
+# AWS partition (aws, aws-us-gov, aws-cn)
+data "aws_partition" "current" {}
