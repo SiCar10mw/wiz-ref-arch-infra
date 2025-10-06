@@ -1,10 +1,8 @@
+# Terraform build artifacts
 .terraform/
-terraform.tfstate
-terraform.tfstate.backup
-*.tfvars
-*.tfplan
+*.tfstate
+*.tfstate.backup
 crash.log
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
+
+# Local system
+.DS_Store
