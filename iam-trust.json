@@ -1,20 +1,16 @@
 {
-  "Version": "2012-10-17",
-  "Statement": [
+  "Version":"2012-10-17",
+  "Statement":[
     {
-      "Effect": "Allow",
-      "Principal": {
-        "Federated": "arn:aws:iam::920778676738:oidc-provider/token.actions.githubusercontent.com"
-      },
-      "Action": "sts:AssumeRoleWithWebIdentity",
-      "Condition": {
-        "StringEquals": {
-          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
-        },
-        "StringLike": {
-          "token.actions.githubusercontent.com:sub": [
-            "repo:JerielJuarbe/wiz-ref-arch-infra:ref:refs/heads/main",
-            "repo:JerielJuarbe/wiz-ref-arch-infra:pull_request"
+      "Effect":"Allow",
+      "Principal":{"Federated":"arn:aws:iam::920778676738:oidc-provider/token.actions.githubusercontent.com"},
+      "Action":"sts:AssumeRoleWithWebIdentity",
+      "Condition":{
+        "StringEquals":{"token.actions.githubusercontent.com:aud":"sts.amazonaws.com"},
+        "StringLike":{
+          "token.actions.githubusercontent.com:sub":[
+            "repo:SiCar10mw/wiz-ref-arch-infra:ref:refs/heads/main",
+            "repo:SiCar10mw/wiz-ref-arch-infra:pull_request"
           ]
         }
       }
